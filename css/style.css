@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+html{font-size:16px;font-family: helvetica,"microsoft yahei";}
+@media only screen and (min-width:320px){html {font-size: 17.2px!important;}}
+@media only screen and (min-width:360px){html {font-size: 19.2px!important;}}
+@media only screen and (min-width:375px){html {font-size: 20px!important;}}
+@media only screen and (min-width:400px){html {font-size:21.33px!important}}
+@media only screen and (min-width:414px){html {font-size:22.08px!important}}
+@media only screen and (min-width:480px){html {font-size:25.6px!important}}
+
+@media only screen and (min-width:640px){html {font-size: 34.4px!important}}
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button{margin:0;padding:0; outline: none;box-sizing: border-box;}
+body,button,input,select,textarea{font-size:14px;}html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6{-webkit-text-size-adjust:none;}
+input,select,textarea{font-size:100%;-webkit-appearance: none;}
+table{border-collapse:collapse;border-spacing:0;}
+th{text-align:inherit;}
+fieldset,img,a img{border:0;}
+abbr,acronym{border:0;font-variant:normal;}
+del{text-decoration:line-through;}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500;}
+ol,ul{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
+q:before,q:after{content:'';}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+em{font-style:normal;}
+ins,a{text-decoration:none;}
+a,input{-webkit-tap-highlight-color: transparent;}
+a{-webkit-touch-callout:none; color: inherit;}
+html{ width: 100%; max-width: 640px; margin: 0 auto; }
+
+img,a,iframe,label{display: block;}
+
+
+body{
+	background-color: #f7f3ee;
+}
+section{
+	width: 100%;
+}
+img{
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wenshi{
+	display: none;
+}
+section .type:first-child{
+    margin-top: 4rem;
+}
+.type{
+	position: relative;
+    margin: 0rem 2rem 1rem;
+}
+.type img{
+	width: 100%;
+}
+.type img:last-child{
+	transition: opacity 0.3s;
+	-webkit-transition: opacity 0.3s;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.type:active img:last-child{
+	opacity: 1;
+}
+.list{
+    margin: 2.5rem auto 1.5rem;
+    overflow: hidden;
+    zoom: 1;
+    width: 15.1rem;
+}
+.list .item{
+	width: 4.5rem;
+    height: 4.5rem;
+    background: #6a6969;
+    border-radius: 4px;
+    overflow: hidden;
+    float: left;
+    margin-right: 0.8rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+	color: #fff;
+	font-size: 1rem;
+	line-height: 4.5rem;
+}
+.list .item:nth-child(3n){
+	margin: 0;
+}
+
+.item.active{
+    border: 0.2rem solid #9f2e0a;
+    box-sizing: border-box;
+    line-height: 4.1rem;
+}
+
+
+
+.queren,
+.dingzhi,
+.info{
+	display: none;	
+}
+
+#page5{
+	color: #2f2522;
+}
+
+.info h1{
+	border-bottom: 1px solid #bb454a;
+    padding-left: 1.4rem;
+    margin: 1rem 1.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    background-image: url(../img/hbg.png);
+    background-size: auto 85%;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+.info h2{
+    font-size: 0.7rem;
+    margin: 0.5rem 0.5rem 0 2rem;
+}
+.info p{
+    font-size: 0.6rem;
+    margin: 0.5rem 2rem 0 2rem;
+    color: #5d5a5a;
+}
+.input-item{
+	width: 14rem;
+    height: 1.6rem;
+    margin: 1rem auto 0;
+    /* padding: 0.3rem 0.5rem; */
+    border: 1px solid #9f2e0a;
+    box-sizing: border-box;
+    border-radius: 8px;
+    position: relative;
+    line-height: 1.6rem;
+    overflow: hidden;
+}
+.input-item span{
+    display: block;
+    float: left;
+    padding: 0 1rem;
+    background: #9f2e0a;
+    color: #fff;
+}
+.input-item input{
+	border: none;
+    height: 1.6rem;
+    padding: 0 1rem;
+    width: 9rem;
+    background: transparent;
+}
+.input-item a{
+    width: 3rem;
+    height: 1.6rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    background: #9f2e0a;
+    color: #fff;
+}
+
+#sub-dingzhi{
+	background: #9f2e0a;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    line-height: 2rem;
+}
+
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"] {
+	-webkit-appearance: none;
+}
