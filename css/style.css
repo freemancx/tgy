@@ -31,20 +31,14 @@ ins,a{text-decoration:none;}
 a,input{-webkit-tap-highlight-color: transparent;}
 a{-webkit-touch-callout:none; color: inherit;}
 html{ width: 100%; max-width: 640px; margin: 0 auto; }
-
 img,a,iframe,label{display: block;}
-
+img{max-width: 100%;margin-left: auto;margin-right: auto;}
 
 body{
 	background-color: #f7f3ee;
 }
 section{
 	width: 100%;
-}
-img{
-	max-width: 100%;
-	margin-left: auto;
-	margin-right: auto;
 }
 .wenshi{
 	display: none;

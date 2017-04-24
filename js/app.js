@@ -10,42 +10,32 @@ window.shareData = {
 var caici = {
 	chengpin : [
 		{
-			name : "笔筒成品1",
+			name : "唐碗",
 			title : " ",
 			content : " "
 		},
 		{
-			name : "笔筒成品2",
+			name : "《蝦趣》",
 			title : " ",
 			content : " "
 		},
 		{
-			name : "唐碗成品",
+			name : "《连年有鱼》",
 			title : " ",
 			content : " "
 		},
 		{
-			name : "虾",
+			name : "《清香》",
 			title : " ",
 			content : " "
 		},
 		{
-			name : "鱼1",
+			name : "《连年有鱼》",
 			title : " ",
 			content : " "
 		},
 		{
-			name : "鱼2",
-			title : " ",
-			content : " "
-		},
-		{
-			name : "鱼3",
-			title : " ",
-			content : " "
-		},
-		{
-			name : "鱼4",
+			name : "《连年有鱼》",
 			title : " ",
 			content : " "
 		}
