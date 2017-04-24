@@ -111,6 +111,9 @@ section .type:first-child{
 #page5{
 	color: #2f2522;
 }
+.info img{
+	min-height: 3rem;
+}
 
 .info h1{
 	border-bottom: 1px solid #bb454a;
@@ -131,6 +134,7 @@ section .type:first-child{
     font-size: 0.6rem;
     margin: 0.5rem 2rem 0 2rem;
     color: #5d5a5a;
+    margin-bottom: 1rem;
 }
 .input-item{
 	width: 14rem;
