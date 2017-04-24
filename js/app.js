@@ -107,7 +107,7 @@ var niesu = {
 		}
 	],
 	qixing : [
-		"人物","动物","生肖","花器","茶器","香器","酒器","挂饰","礼品"
+		"品类一","品类二","品类三","品类四"
 	]
 };
 
@@ -128,6 +128,8 @@ $(document).ready(function() {
 		setCookie('type',type);
 		if( type == 'caici' ){
 			$(".wenshi").css('display','block');
+		}else{
+			$(".niesu").css('display','block');
 		}
 	});
 	$("#page4").length && $(function(){
@@ -135,8 +137,12 @@ $(document).ready(function() {
 		var choice = urlData.choice;
 		setCookie('choice',choice);
 		
-		$(".choice-title").attr('src','img/d'+ choice +'.jpg');
 		
+		if( type == 'niesu' && choice == 'qixing' ){
+			$(".choice-title").attr('src','img/dleixing.jpg');
+		}else{
+			$(".choice-title").attr('src','img/d'+ choice +'.jpg');
+		}
 		
 		var data,list,imgT;
 		if( type == 'caici' ){
@@ -169,11 +175,11 @@ $(document).ready(function() {
 		for (var i=0;i<list.length;i++) {
 			htmlStr += '<a class="item" id="'+ i +'">';
 			
-			if( choice == 'qixing' ){
-				htmlStr += '<p>'+ list[i] +'</p>';
-			}else{
+//			if( choice == 'qixing' ){
+//				htmlStr += '<p>'+ list[i] +'</p>';
+//			}else{
 				htmlStr += '<img src="img/'+ imgT + choice + i +'s.jpg" />';
-			}
+//			}
 			
 			htmlStr += '</a>';
 		}
@@ -206,9 +212,11 @@ $(document).ready(function() {
 		if( type == 'caici' ){
 			imgT = 'e';
 			data = caici;
+			$("#inp-qixing").prev().text('器形');
 		}else{
 			imgT = 'f';
 			data = niesu;
+			$("#inp-qixing").prev().text('品类');
 		}
 		switch (choice){
 			case 'chengpin':{

@@ -40,7 +40,8 @@ body{
 section{
 	width: 100%;
 }
-.wenshi{
+.wenshi,
+.niesu{
 	display: none;
 }
 section .type:first-child{
@@ -83,12 +84,19 @@ section .type:first-child{
 	color: #fff;
 	font-size: 1rem;
 	line-height: 4.5rem;
+	position: relative;
 }
 .list .item:nth-child(3n){
 	margin: 0;
 }
 
-.item.active{
+.item.active:after{
+	content: '';
+	width: 4.5rem;
+    height: 4.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
     border: 0.2rem solid #9f2e0a;
     box-sizing: border-box;
     line-height: 4.1rem;
