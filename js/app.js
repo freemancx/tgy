@@ -258,11 +258,18 @@ $(document).ready(function() {
 			
 			$(".dingzhi").show();
 			
-			AV.initialize('G6wculYbfr0PoDxdg3kpiR63-gzGzoHsz', 'OEk9gcdYlvAx3MbwvKHfmFMM');
+			var APP_ID = 'G6wculYbfr0PoDxdg3kpiR63-gzGzoHsz';
+			var APP_KEY = 'OEk9gcdYlvAx3MbwvKHfmFMM';
+			AV.init({
+			  	appId: APP_ID,
+			  	appKey: APP_KEY
+			});
+			
+			
 			$("#sub-dingzhi").click(function(){
-				var name = $("#inp-name");
-				var tel = $("#inp-tel");
-				if( testTel( tel ) ){
+				var name = $("#inp-name").val();
+				var tel = $("#inp-tel").val();
+				if( !testTel( tel ) ){
 					alert('电话号码格式不正确');
 					return;
 				}
@@ -271,18 +278,20 @@ $(document).ready(function() {
 					return;
 				}
 				
-				var TodoFolder = AV.Object.extend('active');
+				var TodoFolder = AV.Object.extend('baoming');
 			  	var todoFolder = new TodoFolder();
-			  	todoFolder.set('activeName','tgy');
-			  	todoFolder.set('nickName',name);
-			  	todoFolder.set('phone',tel);
-//			  	todoFolder.set('value1', type );
-//			  	todoFolder.set('value2', data.qixing[ parseInt(qixing) ] );
-//			  	if( type == 'caici' ){
-//			  		todoFolder.set('value3', data.wenshi[ parseInt(wenshi) ] );
-//			  	}
+			  	todoFolder.set('active','tgy');
+			  	todoFolder.set('name',name);
+			  	todoFolder.set('tel',tel);
+			  	todoFolder.set('value1', type );
+			  	todoFolder.set('value2', data.qixing[ parseInt(qixing) ] );
+			  	if( type == 'caici' ){
+			  		todoFolder.set('value3', data.wenshi[ parseInt(wenshi) ] );
+			  	}
 			  	todoFolder.save().then(function (todo) {
 			    	console.log('objectId is ' + todo.id);
+			    	$(".mask").fadeIn(1000);
+//			    	alert('报名成功!');
 			  	}, function (error) {
 			    	console.error(error);
 			  	});
