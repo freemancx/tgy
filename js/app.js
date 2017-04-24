@@ -128,7 +128,7 @@ $(document).ready(function() {
 	$("#page1").length && $(function(){
 		setTimeout(function(){
 			$('body').animate({scrollTop: $(document).height() }, 1200); //底部 
-		},3000);
+		},2000);
 	});
 	$("#page2").length && $(function(){
 		
@@ -206,6 +206,9 @@ $(document).ready(function() {
 	});
 	
 	$("#page5").length && $(function(){
+		
+		
+		
 		var type = getCookie('type');
 		var choice = getCookie('choice');
 		
@@ -255,6 +258,38 @@ $(document).ready(function() {
 			
 			$(".dingzhi").show();
 			
+			AV.initialize('G6wculYbfr0PoDxdg3kpiR63-gzGzoHsz', 'OEk9gcdYlvAx3MbwvKHfmFMM');
+			$("#sub-dingzhi").click(function(){
+				var name = $("#inp-name");
+				var tel = $("#inp-tel");
+				if( testTel( tel ) ){
+					alert('电话号码格式不正确');
+					return;
+				}
+				if( name == '' ){
+					alert('姓名不能为空');
+					return;
+				}
+				
+				var TodoFolder = AV.Object.extend('active');
+			  	var todoFolder = new TodoFolder();
+			  	todoFolder.set('activeName','tgy');
+			  	todoFolder.set('nickName',name);
+			  	todoFolder.set('phone',tel);
+//			  	todoFolder.set('value1', type );
+//			  	todoFolder.set('value2', data.qixing[ parseInt(qixing) ] );
+//			  	if( type == 'caici' ){
+//			  		todoFolder.set('value3', data.wenshi[ parseInt(wenshi) ] );
+//			  	}
+			  	todoFolder.save().then(function (todo) {
+			    	console.log('objectId is ' + todo.id);
+			  	}, function (error) {
+			    	console.error(error);
+			  	});
+			});
+			// 保存
+		  	
+			
 		}else{
 			$(".info").show();
 			var id = parseInt( urlData.id );
@@ -303,5 +338,35 @@ function urlToJson() { //默认参数为当前链接
 		paraJsonString = paraJsonString.replace(/\%0A/g, "\:");
 		paraJsonString = '{"' + paraJsonString + '"}';
 		return JSON.parse(paraJsonString);
+	}
+}
+
+
+var wAlert = window.alert;  
+window.alert = function (message) {  
+    try {  
+        var iframe = document.createElement("IFRAME");  
+        iframe.style.display = "none";  
+        iframe.setAttribute("src", 'data:text/plain,');  
+        document.documentElement.appendChild(iframe);  
+        var alertFrame = window.frames[0];  
+        var iwindow = alertFrame.window;  
+        if (iwindow == undefined) {  
+            iwindow = alertFrame.contentWindow;  
+        }  
+        iwindow.alert(message);  
+        iframe.parentNode.removeChild(iframe);  
+    }  
+    catch (exc) {  
+        return wAlert(message);  
+    }  
+}  
+
+function testTel( tel ){
+	var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+	if (reg.test(tel)) {
+	    return true;
+	}else{
+	    return false;
 	}
 }
